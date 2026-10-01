@@ -5,12 +5,16 @@ type: software
 authors:
   - name: "Workflow Inspector"
 version: 0.1.0
+date-released: 2026-10-01
 license: MIT
 repository-code: "https://github.com/WBZKLLC/workflow-inspector-toolkit"
 url: "https://workflow-inspector.com"
-abstract: "Local event validation and descriptive handoff and onboarding timing tools. Included examples are fictional and do not establish customer outcomes."
+abstract: "Open-source local tools and reproducible examples for Workflow Inspector handoff diagnostics, workflow handoff analysis, and SaaS customer onboarding evidence."
 keywords:
-  - workflow event validation
-  - handoff waiting time
+  - Workflow Inspector
+  - handoff diagnostic
+  - workflow handoff diagnostic
+  - cross-functional handoff analysis
+  - workflow analysis
   - SaaS customer onboarding
-  - descriptive statistics
+  - process analysis
