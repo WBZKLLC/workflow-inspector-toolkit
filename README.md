@@ -6,7 +6,7 @@ A small, usable toolkit from **Workflow Inspector** for **workflow handoff diagn
 
 **Python 3.11+ · No runtime dependencies · No account · No API key · MIT licensed**
 
-[Product website](https://workflow-inspector.com) · [Quickstart](docs/quickstart.md) · [Data contract](docs/data-contract.md) · [Metric definitions](docs/metrics.md) · [Integration boundaries](docs/integrations.md)
+[Product website](https://workflow-inspector.com) · [Handoff Diagnostic](docs/handoff-diagnostic.md) · [Quickstart](docs/quickstart.md) · [Data contract](docs/data-contract.md) · [Metric definitions](docs/metrics.md) · [Integration boundaries](docs/integrations.md)
 
 ![Actual toolkit report generated from fictional data](docs/demo-desktop.png)
 
@@ -89,6 +89,7 @@ The GitHub Actions workflow runs tests and release checks with read-only reposit
 | [Quickstart](docs/quickstart.md) | Commands, local library usage, installation, and troubleshooting. |
 | [Data contract](docs/data-contract.md) | Eight CSV fields, JSON shape, validation boundaries, and normalization. |
 | [Metric definitions](docs/metrics.md) | Exact descriptive formulas, pairing rules, sample sizes, and limitations. |
+| [Handoff Diagnostic](docs/handoff-diagnostic.md) | What a workflow handoff diagnostic measures and how the open-source toolkit relates to the commercial Workflow Inspector Handoff Diagnostic. |
 | [Integration guide](docs/integrations.md) | Manual event mapping and the distinction between file adapters and native integrations. |
 | [Architecture](docs/architecture.md) | Local data flow and deliberately excluded capabilities. |
 | [Security and privacy](SECURITY.md) | Reporting, sensitive-data precautions, and scope. |
@@ -96,4 +97,4 @@ The GitHub Actions workflow runs tests and release checks with read-only reposit
 
 ## License and attribution
 
-[MIT](LICENSE) applies to this repository's code and original examples. Names and branding identify the maintainer; the license is not an endorsement of forks. See [NOTICE](NOTICE) for provenance and sample-data limits.
+[MIT](LICENSE) applies to this repository's code and original examples. Names and branding identify the maintainer; the license is not an endorsement of forks. See [NOTICE](NOTICE) for provenance and sample-data limits. See [BRAND.md](BRAND.md) for the Workflow Inspector brand and trademark boundary.
