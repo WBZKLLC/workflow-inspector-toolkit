@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Workflow Inspector Toolkit: normalized four-event subset v1",
+  "description": "Local toolkit input only; not a hosted API specification. Runtime validation additionally checks unique event IDs and timestamp semantics.",
+  "type": "array",
+  "minItems": 1,
+  "maxItems": 10000,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "external_event_id",
+      "case_key",
+      "stage",
+      "event_type",
+      "occurred_at"
+    ],
+    "properties": {
+      "external_event_id": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+        "not": {
+          "pattern": "[\\r\\n]"
+        }
+      },
+      "case_key": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+        "not": {
+          "pattern": "[\\r\\n]"
+        }
+      },
+      "stage": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+        "not": {
+          "pattern": "[\\r\\n]"
+        }
+      },
+      "event_type": {
+        "enum": [
+          "workflow_started",
+          "workflow_completed",
+          "handoff_ready",
+          "handoff_accepted"
+        ]
+      },
+      "occurred_at": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+      },
+      "owner_key": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+            "not": {
+              "pattern": "[\\r\\n]"
+            }
+          },
+          {
+            "const": ""
+          }
+        ]
+      },
+      "actor_key": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+            "not": {
+              "pattern": "[\\r\\n]"
+            }
+          },
+          {
+            "const": ""
+          }
+        ]
+      },
+      "metadata": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "correlation_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+            "not": {
+              "pattern": "[\\r\\n]"
+            }
+          },
+          "owner_observed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "event_type": {
+              "enum": [
+                "handoff_ready",
+                "handoff_accepted"
+              ]
+            }
+          },
+          "required": [
+            "event_type"
+          ]
+        },
+        "then": {
+          "required": [
+            "metadata"
+          ],
+          "properties": {
+            "metadata": {
+              "required": [
+                "correlation_key"
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

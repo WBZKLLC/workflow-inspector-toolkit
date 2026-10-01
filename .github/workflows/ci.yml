@@ -1,0 +1,26 @@
+name: Toolkit checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: toolkit-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out this repository only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check runtime
+        run: python3 -c 'import sys; assert sys.version_info >= (3, 11)'
+      - name: Run offline tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Check example reproducibility and public files
+        run: python3 scripts/check_release.py

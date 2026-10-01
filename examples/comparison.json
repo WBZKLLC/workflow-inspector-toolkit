@@ -1,0 +1,208 @@
+{
+  "format_version": "1.0",
+  "tool": "Workflow Inspector Toolkit",
+  "tool_version": "0.1.0",
+  "kind": "comparison",
+  "metrics": {
+    "median_handoff_wait_hours": {
+      "baseline": {
+        "value": 10.0,
+        "unit": "hours",
+        "sample_size": 3
+      },
+      "followup": {
+        "value": 3.0,
+        "unit": "hours",
+        "sample_size": 3
+      },
+      "delta_hours": -7.0,
+      "delta_percent": -70.0
+    },
+    "median_workflow_duration_hours": {
+      "baseline": {
+        "value": 40.0,
+        "unit": "hours",
+        "sample_size": 3
+      },
+      "followup": {
+        "value": 22.0,
+        "unit": "hours",
+        "sample_size": 3
+      },
+      "delta_hours": -18.0,
+      "delta_percent": -45.0
+    }
+  },
+  "baseline": {
+    "format_version": "1.0",
+    "tool": "Workflow Inspector Toolkit",
+    "tool_version": "0.1.0",
+    "normalized_events_sha256": "8d73733efce3c6698ce98f39a71b6fea4f39f3fb5567b002fd6cecf2d7d899ad",
+    "event_span": {
+      "first": "2026-05-01T09:00:00Z",
+      "last": "2026-05-04T11:00:00Z"
+    },
+    "counts": {
+      "events": 12,
+      "cases": 3,
+      "measured_workflows": 3,
+      "excluded_workflows": 0,
+      "handoffs": 3,
+      "measured_handoffs": 3,
+      "excluded_handoffs": 0,
+      "ownership_observed_events": 6,
+      "explicit_missing_owner_events": 0
+    },
+    "metrics": {
+      "median_handoff_wait_hours": {
+        "value": 10.0,
+        "unit": "hours",
+        "sample_size": 3
+      },
+      "median_workflow_duration_hours": {
+        "value": 40.0,
+        "unit": "hours",
+        "sample_size": 3
+      }
+    },
+    "cases": [
+      {
+        "case_key": "synthetic-baseline-001",
+        "status": "measured",
+        "duration_hours": 24.0
+      },
+      {
+        "case_key": "synthetic-baseline-002",
+        "status": "measured",
+        "duration_hours": 40.0
+      },
+      {
+        "case_key": "synthetic-baseline-003",
+        "status": "measured",
+        "duration_hours": 72.0
+      }
+    ],
+    "handoffs": [
+      {
+        "case_key": "synthetic-baseline-001",
+        "stage": "sales-to-implementation",
+        "correlation_key": "handoff-001",
+        "status": "measured",
+        "duration_hours": 6.0
+      },
+      {
+        "case_key": "synthetic-baseline-002",
+        "stage": "sales-to-implementation",
+        "correlation_key": "handoff-002",
+        "status": "measured",
+        "duration_hours": 10.0
+      },
+      {
+        "case_key": "synthetic-baseline-003",
+        "stage": "sales-to-implementation",
+        "correlation_key": "handoff-003",
+        "status": "measured",
+        "duration_hours": 18.0
+      }
+    ],
+    "limitations": [
+      "Descriptive statistics only; no proprietary score or validated benchmark.",
+      "Elapsed clock hours, not business hours or recorded work effort.",
+      "Only complete, unambiguous pairs contribute to duration statistics.",
+      "Missing, duplicate-type, or reversed pairs are flagged, never converted to zero.",
+      "Event coverage depends on the supplied file; absent records do not prove absent problems.",
+      "Do not compare different processes or infer that a change caused an improvement."
+    ]
+  },
+  "followup": {
+    "format_version": "1.0",
+    "tool": "Workflow Inspector Toolkit",
+    "tool_version": "0.1.0",
+    "normalized_events_sha256": "b7671a6577d76cc5a16252b0062db25563b659b371a04567b2e712c8231373b1",
+    "event_span": {
+      "first": "2026-05-08T09:00:00Z",
+      "last": "2026-05-09T17:00:00Z"
+    },
+    "counts": {
+      "events": 12,
+      "cases": 3,
+      "measured_workflows": 3,
+      "excluded_workflows": 0,
+      "handoffs": 3,
+      "measured_handoffs": 3,
+      "excluded_handoffs": 0,
+      "ownership_observed_events": 6,
+      "explicit_missing_owner_events": 0
+    },
+    "metrics": {
+      "median_handoff_wait_hours": {
+        "value": 3.0,
+        "unit": "hours",
+        "sample_size": 3
+      },
+      "median_workflow_duration_hours": {
+        "value": 22.0,
+        "unit": "hours",
+        "sample_size": 3
+      }
+    },
+    "cases": [
+      {
+        "case_key": "synthetic-followup-001",
+        "status": "measured",
+        "duration_hours": 12.0
+      },
+      {
+        "case_key": "synthetic-followup-002",
+        "status": "measured",
+        "duration_hours": 22.0
+      },
+      {
+        "case_key": "synthetic-followup-003",
+        "status": "measured",
+        "duration_hours": 30.0
+      }
+    ],
+    "handoffs": [
+      {
+        "case_key": "synthetic-followup-001",
+        "stage": "sales-to-implementation",
+        "correlation_key": "handoff-001",
+        "status": "measured",
+        "duration_hours": 2.0
+      },
+      {
+        "case_key": "synthetic-followup-002",
+        "stage": "sales-to-implementation",
+        "correlation_key": "handoff-002",
+        "status": "measured",
+        "duration_hours": 3.0
+      },
+      {
+        "case_key": "synthetic-followup-003",
+        "stage": "sales-to-implementation",
+        "correlation_key": "handoff-003",
+        "status": "measured",
+        "duration_hours": 5.0
+      }
+    ],
+    "limitations": [
+      "Descriptive statistics only; no proprietary score or validated benchmark.",
+      "Elapsed clock hours, not business hours or recorded work effort.",
+      "Only complete, unambiguous pairs contribute to duration statistics.",
+      "Missing, duplicate-type, or reversed pairs are flagged, never converted to zero.",
+      "Event coverage depends on the supplied file; absent records do not prove absent problems.",
+      "Do not compare different processes or infer that a change caused an improvement."
+    ]
+  },
+  "limitations": [
+    "Descriptive statistics only; no proprietary score or validated benchmark.",
+    "Elapsed clock hours, not business hours or recorded work effort.",
+    "Only complete, unambiguous pairs contribute to duration statistics.",
+    "Missing, duplicate-type, or reversed pairs are flagged, never converted to zero.",
+    "Event coverage depends on the supplied file; absent records do not prove absent problems.",
+    "Do not compare different processes or infer that a change caused an improvement.",
+    "This comparison does not establish statistical significance or causal improvement.",
+    "Cohort, process, event coverage, and observation-window equivalence require human review."
+  ]
+}

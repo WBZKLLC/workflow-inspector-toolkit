@@ -1,0 +1,140 @@
+[
+  {
+    "external_event_id": "synthetic-baseline-001-start",
+    "case_key": "synthetic-baseline-001",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_started",
+    "occurred_at": "2026-05-01T09:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-baseline-001-ready",
+    "case_key": "synthetic-baseline-001",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_ready",
+    "occurred_at": "2026-05-01T10:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-001",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-baseline-001-accepted",
+    "case_key": "synthetic-baseline-001",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_accepted",
+    "occurred_at": "2026-05-01T16:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-001",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-baseline-001-completed",
+    "case_key": "synthetic-baseline-001",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_completed",
+    "occurred_at": "2026-05-02T09:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-baseline-002-start",
+    "case_key": "synthetic-baseline-002",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_started",
+    "occurred_at": "2026-05-01T10:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-baseline-002-ready",
+    "case_key": "synthetic-baseline-002",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_ready",
+    "occurred_at": "2026-05-01T11:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-002",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-baseline-002-accepted",
+    "case_key": "synthetic-baseline-002",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_accepted",
+    "occurred_at": "2026-05-01T21:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-002",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-baseline-002-completed",
+    "case_key": "synthetic-baseline-002",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_completed",
+    "occurred_at": "2026-05-03T02:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-baseline-003-start",
+    "case_key": "synthetic-baseline-003",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_started",
+    "occurred_at": "2026-05-01T11:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-baseline-003-ready",
+    "case_key": "synthetic-baseline-003",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_ready",
+    "occurred_at": "2026-05-01T12:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-003",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-baseline-003-accepted",
+    "case_key": "synthetic-baseline-003",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_accepted",
+    "occurred_at": "2026-05-02T06:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-003",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-baseline-003-completed",
+    "case_key": "synthetic-baseline-003",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_completed",
+    "occurred_at": "2026-05-04T11:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  }
+]
