@@ -1,0 +1,82 @@
+name: Verify official website backlink
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Install isolated browser verification tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/toolkit-link-check" --ignore-scripts --no-audit --no-fund playwright@1.62.1
+          node "$RUNNER_TEMP/toolkit-link-check/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Read public pages only; no sign-in or customer records
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs/promises';
+          import { pathToFileURL } from 'node:url';
+          const { chromium } = await import(pathToFileURL(`${process.env.RUNNER_TEMP}/toolkit-link-check/node_modules/playwright/index.mjs`).href);
+          const base = 'https://workflow-inspector.com';
+          const repository = 'https://github.com/WBZKLLC/workflow-inspector-toolkit';
+          const results = [];
+          let browser;
+          try {
+            for (const path of ['/', '/pricing', '/how-it-works']) {
+              const response = await fetch(base + path, { signal: AbortSignal.timeout(30000) });
+              assert.equal(response.status, 200, `HTTP status for ${path}`);
+              const html = await response.text();
+              const block = html.match(/<noscript\b[^>]*\bdata-public-toolkit\b[^>]*>([\s\S]*?)<\/noscript>/i)?.[1];
+              assert.ok(block?.includes(`href="${repository}"`), `Static backlink absent on ${path}`);
+              results.push({ path, status: response.status, finalUrl: response.url, staticBacklink: true });
+            }
+            const www = await fetch('https://www.workflow-inspector.com/', { signal: AbortSignal.timeout(30000) });
+            assert.equal(www.status, 200, 'www homepage');
+            assert.equal(new URL(www.url).hostname, 'workflow-inspector.com', 'www canonical destination');
+            results.push({ path: 'https://www.workflow-inspector.com/', status: www.status, finalUrl: www.url });
+            browser = await chromium.launch({ headless: true });
+            for (const viewport of [{ width: 1440, height: 900 }, { width: 390, height: 844 }]) {
+              const context = await browser.newContext({ viewport });
+              const page = await context.newPage();
+              await page.goto(base + '/', { waitUntil: 'domcontentloaded', timeout: 60000 });
+              const link = page.getByTestId('footer-public-toolkit');
+              await link.waitFor({ state: 'visible', timeout: 30000 });
+              assert.equal(await link.count(), 1);
+              assert.equal(await link.getAttribute('href'), repository);
+              await link.scrollIntoViewIfNeeded();
+              await link.focus();
+              assert.equal(await link.evaluate(el => el === document.activeElement), true);
+              assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), true, 'Horizontal page overflow');
+              await page.screenshot({ path: `evidence/footer-${viewport.width}.png` });
+              results.push({ viewport, visibleBacklink: true, keyboardFocusable: true, horizontalOverflow: false });
+              await context.close();
+            }
+            const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+            const page = await context.newPage();
+            await page.goto(base + '/', { waitUntil: 'domcontentloaded', timeout: 60000 });
+            const link = page.locator('noscript[data-public-toolkit] a');
+            assert.equal(await link.getAttribute('href'), repository);
+            assert.equal(await link.isVisible(), true);
+            results.push({ javaScriptEnabled: false, visibleBacklink: true });
+            await context.close();
+            console.log('Public website backlink verified: three static routes, www redirect, desktop, mobile and JavaScript disabled. No sign-in, purchases or customer records were accessed.');
+          } finally {
+            await browser?.close();
+            await fs.writeFile('evidence/public-link-verification.json', JSON.stringify({ checkedAt: new Date().toISOString(), verifierCommit: process.env.GITHUB_SHA, results }, null, 2));
+          }
+          JS
+      - name: Retain public verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-website-backlink
+          path: evidence/
+          retention-days: 7
+          if-no-files-found: warn
