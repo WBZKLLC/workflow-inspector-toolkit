@@ -1,0 +1,65 @@
+name: Publish toolkit release
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/release.yml'
+      - 'docs/releases/v0.1.0.md'
+  pull_request:
+    paths:
+      - '.github/workflows/release.yml'
+      - 'docs/releases/v0.1.0.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: toolkit-release-v0.1.0
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out this repository only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check runtime and version
+        run: |
+          python3 -c 'import sys, tomllib; assert sys.version_info >= (3, 11); assert tomllib.load(open("pyproject.toml", "rb"))["project"]["version"] == "0.1.0"'
+      - name: Run offline tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Check reproducibility and public files
+        run: python3 scripts/check_release.py
+  publish:
+    needs: verify
+    if: github.event_name != 'pull_request' && github.repository == 'WBZKLLC/workflow-inspector-toolkit' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the verified revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Publish the source archive without modifying existing releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view v0.1.0 --repo "$GITHUB_REPOSITORY" --json url --jq .url; then
+            echo 'Release v0.1.0 already exists; it was not changed.'
+            exit 0
+          fi
+          git archive --format=zip --prefix=workflow-inspector-toolkit/ "$GITHUB_SHA" > workflow-inspector-toolkit-v0.1.0.zip
+          sha256sum workflow-inspector-toolkit-v0.1.0.zip > workflow-inspector-toolkit-v0.1.0.zip.sha256
+          gh release create v0.1.0 \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title 'v0.1.0: Workflow Inspector Toolkit' \
+            --notes-file docs/releases/v0.1.0.md \
+            workflow-inspector-toolkit-v0.1.0.zip \
+            workflow-inspector-toolkit-v0.1.0.zip.sha256
