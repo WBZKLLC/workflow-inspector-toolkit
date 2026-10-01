@@ -1,0 +1,9 @@
+{
+  "name": "Workflow Inspector Toolkit",
+  "canonicalWebsite": "https://workflow-inspector.com",
+  "repository": "https://github.com/WBZKLLC/workflow-inspector-toolkit",
+  "description": "Open-source tools and reproducible examples for workflow handoff diagnostics, handoff waiting-time analysis, and SaaS customer onboarding evidence.",
+  "keywords": ["Workflow Inspector", "handoff diagnostic", "workflow handoff diagnostic", "cross-functional handoff analysis", "workflow analysis", "SaaS customer onboarding", "process analysis"],
+  "commercialOffering": {"name": "Workflow Inspector Handoff Diagnostic", "url": "https://workflow-inspector.com"},
+  "license": "MIT"
+}
