@@ -2,7 +2,7 @@
 
 ### See where the handoff waits. Keep the evidence on your machine.
 
-A small, usable toolkit for **workflow event validation, handoff waiting-time analysis, and SaaS customer onboarding evidence**. Give it a normalized CSV or JSON file. Get explainable numbers, visible sample sizes, explicit exclusions, and a self-contained HTML report.
+A small, usable toolkit from **Workflow Inspector** for **workflow handoff diagnostics, cross-functional handoff analysis, workflow event validation, handoff waiting-time analysis, and SaaS customer onboarding evidence**. Give it a normalized CSV or JSON file. Get explainable numbers, visible sample sizes, explicit exclusions, and a self-contained HTML report.
 
 **Python 3.11+ · No runtime dependencies · No account · No API key · MIT licensed**
 
@@ -42,6 +42,12 @@ These values demonstrate a reproducible input-to-output path. They are **not** c
 
 The [raw activity](examples/baseline.csv), [comparison JSON](examples/comparison.json), and [standalone HTML example](examples/comparison.html) are all included. The same outputs are checked by the release validation script.
 
+## Workflow Inspector Handoff Diagnostic
+
+The commercial **Workflow Inspector Handoff Diagnostic** is designed to investigate cross-functional workflow handoffs: where work waits, where ownership changes, and where recorded process evidence can support a deeper diagnostic. This open-source toolkit exposes reproducible descriptive handoff measurements without publishing Workflow Inspector's proprietary scoring implementation.
+
+Use the toolkit for local **workflow handoff diagnostic** analysis and reproducible examples. For the full commercial Handoff Diagnostic and current Workflow Inspector services, visit [workflow-inspector.com](https://workflow-inspector.com).
+
 ## What it does
 
 | Capability | Included behavior |
@@ -58,7 +64,7 @@ The [raw activity](examples/baseline.csv), [comparison JSON](examples/comparison
 
 This repository contains **no hosted API client, automatic CRM connection, billing integration, production deployment, or proprietary score**. It is not a substitute for a monitoring workspace. The input subset is stricter than a general event importer and is not a promise that every hosted export will load unchanged.
 
-For the commercial offering, use the [SaaS customer onboarding product page](https://workflow-inspector.com/saas-customer-onboarding) and [current product guide](https://workflow-inspector.com/how-it-works). Do not infer hosted capabilities from this repository's local functionality.
+For the commercial **Workflow Inspector Handoff Diagnostic** and other Workflow Inspector offerings, visit [workflow-inspector.com](https://workflow-inspector.com). For onboarding-specific work, use the [SaaS customer onboarding product page](https://workflow-inspector.com/saas-customer-onboarding) and [current product guide](https://workflow-inspector.com/how-it-works). Do not infer hosted capabilities from this repository's local functionality.
 
 ## Use your own records carefully
 
