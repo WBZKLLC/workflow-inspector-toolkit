@@ -1,0 +1,18 @@
+Workflow Inspector Toolkit
+
+Maintainer: Workflow Inspector
+Website: https://workflow-inspector.com
+
+This repository is first-party software from Workflow Inspector. It is not
+independent validation, a customer endorsement, or an industry benchmark.
+
+All included event data is newly authored, fictional demonstration data.
+No customer exports, production configuration, source history, credentials,
+internal prompts, or proprietary scoring implementation are included.
+
+The code implements openly described elapsed-time arithmetic and validation.
+It does not reproduce the commercial Handoff Reliability Index.
+
+AI assisted initial code, documentation, and fictional-fixture preparation.
+Runnable tests and reproducible examples provide inspectable checks; they do
+not establish security certification, customer outcomes, or scientific validity.

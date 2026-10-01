@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "workflow-inspector-toolkit"
+version = "0.1.0"
+description = "Local workflow event validation and descriptive handoff timing tools from Workflow Inspector."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Workflow Inspector"}]
+keywords = ["workflow-analysis", "saas-onboarding", "handoff", "event-data", "csv"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://workflow-inspector.com"
+Documentation = "https://github.com/WBZKLLC/workflow-inspector-toolkit/tree/main/docs"
+Repository = "https://github.com/WBZKLLC/workflow-inspector-toolkit"
+Issues = "https://github.com/WBZKLLC/workflow-inspector-toolkit/issues"
+
+[project.scripts]
+wi-toolkit = "workflow_inspector_toolkit.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["workflow_inspector_toolkit*"]

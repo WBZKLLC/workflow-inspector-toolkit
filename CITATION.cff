@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Cite this toolkit as first-party software, not independent product validation."
+title: "Workflow Inspector Toolkit"
+type: software
+authors:
+  - name: "Workflow Inspector"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/WBZKLLC/workflow-inspector-toolkit"
+url: "https://workflow-inspector.com"
+abstract: "Local event validation and descriptive handoff and onboarding timing tools. Included examples are fictional and do not establish customer outcomes."
+keywords:
+  - workflow event validation
+  - handoff waiting time
+  - SaaS customer onboarding
+  - descriptive statistics

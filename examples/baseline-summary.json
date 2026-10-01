@@ -1,0 +1,81 @@
+{
+  "format_version": "1.0",
+  "tool": "Workflow Inspector Toolkit",
+  "tool_version": "0.1.0",
+  "normalized_events_sha256": "8d73733efce3c6698ce98f39a71b6fea4f39f3fb5567b002fd6cecf2d7d899ad",
+  "event_span": {
+    "first": "2026-05-01T09:00:00Z",
+    "last": "2026-05-04T11:00:00Z"
+  },
+  "counts": {
+    "events": 12,
+    "cases": 3,
+    "measured_workflows": 3,
+    "excluded_workflows": 0,
+    "handoffs": 3,
+    "measured_handoffs": 3,
+    "excluded_handoffs": 0,
+    "ownership_observed_events": 6,
+    "explicit_missing_owner_events": 0
+  },
+  "metrics": {
+    "median_handoff_wait_hours": {
+      "value": 10.0,
+      "unit": "hours",
+      "sample_size": 3
+    },
+    "median_workflow_duration_hours": {
+      "value": 40.0,
+      "unit": "hours",
+      "sample_size": 3
+    }
+  },
+  "cases": [
+    {
+      "case_key": "synthetic-baseline-001",
+      "status": "measured",
+      "duration_hours": 24.0
+    },
+    {
+      "case_key": "synthetic-baseline-002",
+      "status": "measured",
+      "duration_hours": 40.0
+    },
+    {
+      "case_key": "synthetic-baseline-003",
+      "status": "measured",
+      "duration_hours": 72.0
+    }
+  ],
+  "handoffs": [
+    {
+      "case_key": "synthetic-baseline-001",
+      "stage": "sales-to-implementation",
+      "correlation_key": "handoff-001",
+      "status": "measured",
+      "duration_hours": 6.0
+    },
+    {
+      "case_key": "synthetic-baseline-002",
+      "stage": "sales-to-implementation",
+      "correlation_key": "handoff-002",
+      "status": "measured",
+      "duration_hours": 10.0
+    },
+    {
+      "case_key": "synthetic-baseline-003",
+      "stage": "sales-to-implementation",
+      "correlation_key": "handoff-003",
+      "status": "measured",
+      "duration_hours": 18.0
+    }
+  ],
+  "limitations": [
+    "Descriptive statistics only; no proprietary score or validated benchmark.",
+    "Elapsed clock hours, not business hours or recorded work effort.",
+    "Only complete, unambiguous pairs contribute to duration statistics.",
+    "Missing, duplicate-type, or reversed pairs are flagged, never converted to zero.",
+    "Event coverage depends on the supplied file; absent records do not prove absent problems.",
+    "Do not compare different processes or infer that a change caused an improvement."
+  ]
+}

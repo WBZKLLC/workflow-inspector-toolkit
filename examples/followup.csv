@@ -1,0 +1,13 @@
+external_event_id,case_key,stage,event_type,occurred_at,owner_key,actor_key,metadata
+synthetic-followup-001-start,synthetic-followup-001,sales-to-implementation,workflow_started,2026-05-08T09:00:00Z,implementation-team,,
+synthetic-followup-001-ready,synthetic-followup-001,sales-to-implementation,handoff_ready,2026-05-08T10:00:00Z,implementation-team,,"{""correlation_key"":""handoff-001"",""owner_observed"":true}"
+synthetic-followup-001-accepted,synthetic-followup-001,sales-to-implementation,handoff_accepted,2026-05-08T12:00:00Z,implementation-team,,"{""correlation_key"":""handoff-001"",""owner_observed"":true}"
+synthetic-followup-001-completed,synthetic-followup-001,sales-to-implementation,workflow_completed,2026-05-08T21:00:00Z,implementation-team,,
+synthetic-followup-002-start,synthetic-followup-002,sales-to-implementation,workflow_started,2026-05-08T10:00:00Z,implementation-team,,
+synthetic-followup-002-ready,synthetic-followup-002,sales-to-implementation,handoff_ready,2026-05-08T11:00:00Z,implementation-team,,"{""correlation_key"":""handoff-002"",""owner_observed"":true}"
+synthetic-followup-002-accepted,synthetic-followup-002,sales-to-implementation,handoff_accepted,2026-05-08T14:00:00Z,implementation-team,,"{""correlation_key"":""handoff-002"",""owner_observed"":true}"
+synthetic-followup-002-completed,synthetic-followup-002,sales-to-implementation,workflow_completed,2026-05-09T08:00:00Z,implementation-team,,
+synthetic-followup-003-start,synthetic-followup-003,sales-to-implementation,workflow_started,2026-05-08T11:00:00Z,implementation-team,,
+synthetic-followup-003-ready,synthetic-followup-003,sales-to-implementation,handoff_ready,2026-05-08T12:00:00Z,implementation-team,,"{""correlation_key"":""handoff-003"",""owner_observed"":true}"
+synthetic-followup-003-accepted,synthetic-followup-003,sales-to-implementation,handoff_accepted,2026-05-08T17:00:00Z,implementation-team,,"{""correlation_key"":""handoff-003"",""owner_observed"":true}"
+synthetic-followup-003-completed,synthetic-followup-003,sales-to-implementation,workflow_completed,2026-05-09T17:00:00Z,implementation-team,,

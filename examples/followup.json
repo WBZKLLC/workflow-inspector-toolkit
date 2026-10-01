@@ -1,0 +1,140 @@
+[
+  {
+    "external_event_id": "synthetic-followup-001-start",
+    "case_key": "synthetic-followup-001",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_started",
+    "occurred_at": "2026-05-08T09:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-followup-001-ready",
+    "case_key": "synthetic-followup-001",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_ready",
+    "occurred_at": "2026-05-08T10:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-001",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-followup-001-accepted",
+    "case_key": "synthetic-followup-001",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_accepted",
+    "occurred_at": "2026-05-08T12:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-001",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-followup-001-completed",
+    "case_key": "synthetic-followup-001",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_completed",
+    "occurred_at": "2026-05-08T21:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-followup-002-start",
+    "case_key": "synthetic-followup-002",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_started",
+    "occurred_at": "2026-05-08T10:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-followup-002-ready",
+    "case_key": "synthetic-followup-002",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_ready",
+    "occurred_at": "2026-05-08T11:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-002",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-followup-002-accepted",
+    "case_key": "synthetic-followup-002",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_accepted",
+    "occurred_at": "2026-05-08T14:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-002",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-followup-002-completed",
+    "case_key": "synthetic-followup-002",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_completed",
+    "occurred_at": "2026-05-09T08:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-followup-003-start",
+    "case_key": "synthetic-followup-003",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_started",
+    "occurred_at": "2026-05-08T11:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  },
+  {
+    "external_event_id": "synthetic-followup-003-ready",
+    "case_key": "synthetic-followup-003",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_ready",
+    "occurred_at": "2026-05-08T12:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-003",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-followup-003-accepted",
+    "case_key": "synthetic-followup-003",
+    "stage": "sales-to-implementation",
+    "event_type": "handoff_accepted",
+    "occurred_at": "2026-05-08T17:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {
+      "correlation_key": "handoff-003",
+      "owner_observed": true
+    }
+  },
+  {
+    "external_event_id": "synthetic-followup-003-completed",
+    "case_key": "synthetic-followup-003",
+    "stage": "sales-to-implementation",
+    "event_type": "workflow_completed",
+    "occurred_at": "2026-05-09T17:00:00Z",
+    "owner_key": "implementation-team",
+    "actor_key": "",
+    "metadata": {}
+  }
+]
